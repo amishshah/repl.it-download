@@ -1,0 +1,24 @@
+{
+	"name" : "repl.it download",
+	"description" : "Adds a download button to repl.it",
+	"version" : "1.0.0",
+	"manifest_version" : 2,
+	"permissions" : [
+		"downloads"
+	],
+	"background" : {
+		"scripts" : [
+			"background.js"
+		],
+		"persistent" : true
+	},
+	"content_scripts" : [
+		{
+			"matches" : ["https://repl.it/*"],
+			"js": ["jquery-3.0.0.min.js", "inject.js"]
+		}
+	],
+	"web_accessible_resources" : [
+		"main.js"
+	]
+}
